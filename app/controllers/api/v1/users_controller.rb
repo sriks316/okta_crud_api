@@ -35,6 +35,8 @@ class Api::V1::UsersController < ApplicationController
 		request = Net::HTTP::Get.new(url)
 		request["Accept"] = 'application/json'
 		request["Content-Type"] = 'application/json'
+		# This token is revoked now. But in a real world keep this token safe as environment variable or somewhere secure without exposing it
+		
 		request["Authorization"] = 'SSWS 00PQwmsXHySRSglpeFyRWowoBSZnMA9muBGqqpvxDJ'
 
 		response = http.request(request)
